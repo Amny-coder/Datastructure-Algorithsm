@@ -1,13 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
+        DoublyLinkedList list = new DoublyLinkedList();
 
-        list.insert(12);
-        list.insert(32);
-        list.insert(14);
+        list.add(0);
+        list.add(1);
+        list.add(2);
 
-        //list.deleteAt(1);
-        list.insertAt(2, 11);
+        list.addToStart(3);
+        list.addToStart(4);
+
+        list.addAt(0, 45);
+        list.addAt(1, 50);
+
+        list.delete();
+        list.deleteAt(1);
 
         list.show();
     }
