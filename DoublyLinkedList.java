@@ -51,20 +51,23 @@ public class DoublyLinkedList {
         DllNode node = new DllNode();
         node.data = data;
 
-        if (index == 0) {
-            addToStart(data);
-        }
-        else {
-            DllNode n = list;
+        try {
+            if (index == 0) {
+                addToStart(data);
+            } else {
+                DllNode n = list;
 
-            for (int i = 0; i < index - 1; i++) {
-                n = n.next;
+                for (int i = 0; i < index - 1; i++) {
+                    n = n.next;
+                }
+                node.next = n.next;
+                n.next = node;
+                node.prev = n.next;
             }
-            node.next = n.next;
-            n.next = node;
-            node.prev = n.next;
+            size++;
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Error invalid index");
         }
-        size++;
     }
 
     /**
@@ -121,20 +124,24 @@ public class DoublyLinkedList {
      */
 
     public void show() {
-        DllNode n2 = list;
 
-        while (n2.next != null) {
+        try {
+            DllNode n2 = list;
+            while (n2.next != null) {
+                System.out.println(n2.data);
+                System.out.println();
+
+                System.out.println("Address of the next node" + n2.next);
+                System.out.println("Address of the previous node: " + n2.prev);
+
+                n2 = n2.next;
+            }
             System.out.println(n2.data);
-            System.out.println();
-
-            System.out.println("Address of the next node" + n2.next);
+            System.out.println("Address of the next node: " + n2.next);
             System.out.println("Address of the previous node: " + n2.prev);
-
-            n2 = n2.next;
+        } catch (NullPointerException e) {
+            System.out.println("Can not display the list because the list is empty");
         }
-        System.out.println(n2.data);
-        System.out.println("Address of the next node: " + n2.next);
-        System.out.println("Address of the previous node: " + n2.prev);
     }
 
     private static class DllNode {
