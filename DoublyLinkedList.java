@@ -104,6 +104,18 @@ public class DoublyLinkedList {
     }
 
     /**
+     * Returns the size of the list
+     */
+
+    public int size() {return size;}
+
+    /**
+     * Returns true if the list is empty otherwise false
+     */
+
+    public boolean isEmpty() {return (size == 0);}
+
+    /**
      * output all the elements on the list including
      * reference to the next and the previous nodes.
      */
