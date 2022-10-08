@@ -139,6 +139,7 @@ public class DoublyLinkedList {
             System.out.println(n2.data);
             System.out.println("Address of the next node: " + n2.next);
             System.out.println("Address of the previous node: " + n2.prev);
+
         } catch (NullPointerException e) {
             System.out.println("Can not display the list because the list is empty");
         }
