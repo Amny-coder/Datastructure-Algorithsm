@@ -1,6 +1,5 @@
 package genericimplementation.simplejavaprogram;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class DecFormat {
@@ -18,28 +17,28 @@ public class DecFormat {
 
         Scanner scan = new Scanner(System.in);
 
-        int a, b, c;
-        System.out.print("Form the equation -> ");
+        double a, b, c;
+        System.out.print("Value of A to Form the equation -> ");
         a = scan.nextInt();
 
-        System.out.print("Form the equation -> ");
+        System.out.print("Value of B to Form the equation -> ");
         b = scan.nextInt();
 
-        System.out.print("Form the equation -> ");
+        System.out.print("Value of C to Form the equation -> ");
         c = scan.nextInt();
 
         System.out.println(a + "X^2 " + b + "X " + c + " = 0");
 
-        DecimalFormat fmt = new DecimalFormat("0.##");
+        if (a != 0) {
+            double mul = 4 * a * c;
+            double power = (Math.pow(b, 2) - (mul));
 
-        double root = Math.pow(b, 2) - 4 * a * c;
-        double result;
+            double positiveResult = ((b + Math.sqrt(power)) / 2 * a);
+            double negativeResult = ((b - Math.sqrt(power)) / 2 * a);
 
-        result = ((-b + Math.sqrt(root) / 2 * a ));
-        System.out.println("Positive first: " + fmt.format(result));
+            System.out.println("X1 = " + positiveResult + " , " + "X2 = " + negativeResult);
+        }
 
-        result = ((-b - Math.sqrt(root)) / 2 * a );
-        System.out.println(":: " + fmt.format(result));
 
     }
 }

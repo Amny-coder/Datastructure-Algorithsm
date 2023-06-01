@@ -1,24 +1,12 @@
+
 public class Main {
     public static void main(String[] args) {
-        DoublyLinkedList list = new DoublyLinkedList();
+        int[] a = {2, 1, 8, 0, -1};
 
-        list.add(0);
-        list.add(1);
-        list.add(2);
-        list.add(2);
+        InsersionSort insersionSort = new InsersionSort();
+        insersionSort.sorting(a);
 
-        list.addToStart(3);
-        list.addToStart(4);
-
-        list.addAt(0, 45);
-        list.addAt(1, 50);
-
-        list.delete();
-        list.deleteAt(1);
-        System.out.println("Size of the list: " + list.size());
-
-        if (list.isEmpty())
-            System.out.println("Empty list " + list.size());
-        list.show();
+        for (int k = 0; k < a.length; k++)
+            System.out.print(a[k] + " ");
     }
 }
